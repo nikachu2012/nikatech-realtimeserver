@@ -12,12 +12,12 @@ from pydantic import BaseModel
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
-SAVE_DATA_PATH: Final[str] = "savedata.json"
 
 # .envファイルを読み込み
 load_dotenv()
 
 ENV_KEY: Final[str] = os.environ["KEY"]
+SAVE_DATA_PATH: Final[str] = os.environ["SAVE_PATH"] if os.environ["SAVE_PATH"] is not None else "savedata.json"
 
 
 class DataType(BaseModel):
