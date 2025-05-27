@@ -17,7 +17,7 @@ app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 load_dotenv()
 
 ENV_KEY: Final[str] = os.environ["KEY"]
-SAVE_DATA_PATH: Final[str] = os.environ["SAVE_PATH"] if os.environ["SAVE_PATH"] is not None else "savedata.json"
+SAVE_DATA_PATH: Final[str] = os.environ.get("SAVE_PATH", "savedata.json")
 
 
 class DataType(BaseModel):
