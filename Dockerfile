@@ -12,8 +12,6 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # 
 COPY ./main.py /code/main.py
-COPY ./.env /code/.env
-COPY ./savedata.json /code/savedata.json
 
 # 
 EXPOSE 80
