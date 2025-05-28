@@ -5,6 +5,7 @@ services: # （１）
       - "8000:80"
     environment:
       - SAVE_PATH=/save/savedata.json
+    restart: always
     volumes:
       - type: bind
         source: "./save"
