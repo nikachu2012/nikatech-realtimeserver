@@ -1,0 +1,11 @@
+services: # （１）
+  server:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      - SAVE_PATH=/save/savedata.json
+    volumes:
+      - type: bind
+        source: "./save"
+        target: "/save"
