@@ -52,7 +52,7 @@ data: dict[str, Any] = {
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
-    return "<DOCTYPE html><html><body><h1>Hello world!</h1><p>This is nikatech realtimeserver ver2025.05.27</p><p>created by nikachu</p></body></html>"
+    return "<h1>Hello world!</h1><p>This is nikatech realtimeserver ver2025.05.27</p><p>created by nikachu</p>"
 
 
 @app.get("/status")
