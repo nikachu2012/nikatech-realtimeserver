@@ -7,11 +7,26 @@ from typing import Any, Final
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, Header, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
+
+origins = [
+    "https://nikatech.nikachu.net/",
+    "http://localhost",
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # .envファイルを読み込み
 load_dotenv()
